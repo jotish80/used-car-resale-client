@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
-
+import logo from '../../assets/logo.png'
 
 
 const Navbar = () => {
@@ -36,7 +36,10 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+               <Link to="/" className="btn btn-ghost normal-case text-xl">
+                    <img className='w-[50px]' src={logo} alt="" />
+                    <p className='text-xl font-semibold'>Used Cars Resale</p>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
