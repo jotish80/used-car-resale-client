@@ -7,23 +7,24 @@ import logo from '../../assets/logo.png'
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then(() => { })
-    //         .catch(err => console.log(err));
-    // }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err));
+    }
 
-    const menuItems = <React.Fragment>
+    const menuItems =
+     <>
         <li><Link to="/">Home</Link></li>
-        {/* <li><Link to="/appointment">Appointment</Link></li> */}
+        <li><Link to="/categories">Categories</Link></li>
         {/* <li><Link to="/about">About</Link></li> */}
-        {/* {user?.uid ?
+        {user?.uid ?
             <>
-                <li><Link to="/dashboard">Dashboard</Link></li>
-                <li><button onClick={handleLogOut}>Sign out</button></li>
+                {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
+                <li><button onClick={handleLogOut}>Sign Out</button></li>
             </>
-            : <li><Link to="/login">Login</Link></li>} */}
-    </React.Fragment>
+            : <li><Link to="/login">Login</Link></li>}
+    </>
 
     return (
         <div className="navbar bg-base-100 flex justify-between">
