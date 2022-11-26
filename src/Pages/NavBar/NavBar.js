@@ -14,19 +14,19 @@ const Navbar = () => {
     }
 
     const menuItems =
-     <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
-        <li><Link to="/blog">Blog</Link></li>
-        {/* <li><Link to="/about">About</Link></li> */}
-        {user?.uid ?
-            <>
-                {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
-                <li><button onClick={handleLogOut}>Sign Out</button></li>
-            </>
-            : <li><Link to="/login">Login</Link></li>}
-    </>
-
+        <>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/categories">Categories</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+          
+            {user?.uid ?
+                <>
+                    {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
+                    <li><button onClick={handleLogOut}>Sign Out</button></li>
+                </>
+                : <li><Link to="/login">Login</Link></li>}
+        </>
     return (
         <div className="navbar bg-base-100 flex justify-between">
             <div className="navbar-start">
@@ -38,7 +38,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-               <Link to="/" className="btn btn-ghost normal-case text-xl">
+                <Link to="/" className="btn btn-ghost normal-case text-xl ">
                     <img className='w-[50px]' src={logo} alt="" />
                     <p className='text-xl font-semibold'>Used Cars Resale</p>
                 </Link>
